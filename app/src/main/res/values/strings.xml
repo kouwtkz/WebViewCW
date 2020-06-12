@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">WebViewCW</string>
+    <string name="back_string">＜</string>
+    <string name="forward_string">＞</string>
+    <string name="home_string">⌂</string>
+    <string name="setting_string">III</string>
+    <string name="default_path_home">file:///android_asset/search.html</string>
+    <string name="reload_string">↺</string>
+</resources>

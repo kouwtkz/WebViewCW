@@ -1,0 +1,108 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width,initial-scale=1" name="viewport">
+    <style>
+        form{
+            margin-top: 40vh;
+            text-align: center;
+        }
+        input[type="text"]{
+            font-family:Arial, Helvetica, sans-serif;
+            font-size: 24px;
+            height: 40px;
+            width: 60vw;
+            max-width: 600px;
+            border-radius: 10px;
+        }
+        input[type="submit"]{
+            font-family:Arial, Helvetica, sans-serif;
+            font-size: 24px;
+            height: 40px;
+            min-width: 80px;
+            width: 8vw;
+            max-width: 160px;
+            border-radius: 10px;
+        }
+        #output{
+            margin: 60px auto 0 auto;
+            width: 80vw;
+            max-width: 800px;
+        }
+        @media (prefers-color-scheme: dark) {
+            body {
+                color: #FFFFFF;
+                background: #080808;
+            }
+            input {
+                color: #FFFFFF;
+                background: #0F0F0F;
+            }
+        }
+        body.dark {
+            color: #FFFFFF;
+            background: #080808;
+        }
+        body.dark input {
+            color: #FFFFFF;
+            background: #0F0F0F;
+        }
+    </style>
+</head>
+<body>
+<script>
+<!--
+    function theme_load() {
+        if (sessionStorage.getItem('dark') != null) {
+            document.body.classList.add('dark');
+        } else {
+            document.body.classList.remove('dark');
+        }
+    }
+    theme_load();
+    function send(e) {
+        var search_name = "p";
+        var search_value = e[search_name].value;
+        if (search_value.match(/((?:https?|file|content|ftp):\/\/\S+)|^\w+[\:]/)) {
+            location.href = search_value;
+            return false;
+        }
+        else if (search_value.match(/^[\w\.\:]+[\.\/\@]/)) {
+            location.href = ('http://'+search_value);
+            return false;
+        }
+        else {
+            return true;
+        }
+    }
+    function print(value) {
+        var elm = document.getElementById('output');
+        if (typeof(value) === "object") {
+            elm.innerText = JSON.stringify(value);
+        } else {
+            elm.innerText = value;
+        }
+    }
+    function ua(value) {
+        print(navigator.userAgent);
+    }
+    function dark(flag) {
+        if (flag == null) flag = true;
+        if (flag) {
+            sessionStorage.setItem('dark', true);
+        } else {
+            sessionStorage.removeItem('dark');
+        }
+        var input_text = document.querySelector('form input[type="text"]');
+        document.getElementById('output').innerText = 'done: ' + input_text.value;
+        input_text.value = '';
+        theme_load();
+    }
+-->
+</script>
+<form action="https://search.yahoo.co.jp/search" onsubmit="return send(this);" autocomplete="off">
+    <input name="p" type="text">
+    <input type="submit" value="検索">
+</form>
+<div id='output'></div>
+</body></html>
